@@ -1,0 +1,57 @@
+.note {
+  position: relative;
+  padding: 25px;
+  height: 280px;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  background-color: blueviolet;
+  border-radius: 30px;
+  overflow: hidden; /* Ensure no overflow issues with absolute positioned .note_footer */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+}
+
+.note:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add box shadow on hover */
+}
+
+.note_text {
+  flex: 1;
+  resize: none;
+  background-color: transparent;
+  font-size: 1rem;
+  line-height: 1.875rem;
+  outline: none;
+  border: none;
+}
+
+.note_footer {
+  position: absolute;
+  bottom: -50px; /* Move it below the .note container initially */
+  right: 10px;
+  width: auto; /* Adjust the width as needed */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease, bottom 0.3s ease; /* Add bottom transition */
+  padding-bottom: 15px;
+  padding-right: 10px;
+}
+
+.note:hover .note_footer {
+  bottom: 10px; /* Bring it up to the visible position */
+  opacity: 1;
+}
+
+.note_footer img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.note_footer img:hover {
+  opacity: 1;
+}
